@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en>
+<html lang="en">
 <head>
   <title>Hello, Map!</title>
   <meta charset="UTF-8"/>
@@ -10,9 +10,10 @@
   <script src="https://js.arcgis.com/4.25/"></script>
 
   <script>
-    require(["esri/config", "esri/Map", "esri/views/MapView"], function(esriConfig, Map, MapView){
+    require(["esri/config", "esri/Map", "esri/views/MapView", "esri/widgets/BasemapGallery"], function(esriConfig, Map, MapView, BasemapGallery){
 
       esriConfig.apiKey = "AAPTxy8BH1VEsoebNVZXo8HurKhkfX2pLTXcVWHRTuerXfKdl8xA3hB7zFxWPjRrs_PmSiHD6NMaIC5WLmBbO-NA1T2GQkQXEa7aLeqxmO48UBNlwetFemomKmm-ST0OzOE-kSn-6yb2lxnygkhJKeVk_StkyBWwjPguCGs8D_lgBidDtsIUFUo_LHpm7CSkXPjglMGjEim8xmk8TzW7-wN5Y_8QOpQ3rGbxcaq4hCiZtjzLu6JxuhL-mJjQuyHjbVLrAT1_0Sem5hOH"
+      
       const map = new Map({
         basemap: "osm" //Basemap Layer
       });
@@ -23,17 +24,16 @@
         zoom: 15,
         container: "viewDiv" //Div element
       });
-    });
 
-    require(["esri/widgets/BasemapGallery"], (BasemapGallery) => {
-      let basemapGallery = new BaemapGallery({
+      const basemapGallery = new BasemapGallery({
         view: view
-      });
+      })
+
       view.ui.add(basemapGallery, {
         position: "top-right"
-      });
+      })
     });
-    
+
   </script>
 
   <style>
