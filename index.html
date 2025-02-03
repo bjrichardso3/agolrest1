@@ -90,17 +90,14 @@
 
       const polyline = {
         type: "polyline",
-        path: [[-88.464678, 44.187908], [-88.461619, 44.186467]]
+        paths: [[-88.464678, 44.187908], [-88.461619, 44.186467]]
       };
 
       const simpleLineSymbol = {
         type: "simple-line", 
         style: "solid",
         color: [0, 0, 139],
-        outline: {
-          color: [255, 255, 255],
-          width: 1
-        }
+        width: 2
       };
 
       const polylineGraphic = new Graphic ({
@@ -112,7 +109,7 @@
 
       const polygon = {
         type: "polygon",
-        ring: [[-88.459223, 44.186223], [-88.458157, 44.185431], [-88.458377, 44.185341], [-88.459759, 44.185703]]
+        rings: [[-88.459223, 44.186223], [-88.458157, 44.185431], [-88.458377, 44.185341], [-88.459759, 44.185703], [-88.459223, 44.186223]]
       };
 
       const simpleFillSymbol = {
