@@ -10,7 +10,7 @@
   <script src="https://js.arcgis.com/4.25/"></script>
 
   <script>
-    require(["esri/config", "esri/Map", "esri/views/MapView", "esri/widgets/BasemapGallery", "esri/widgets/Locate", "esri/widgets/Search", "esri/Graphic", "esri/layers/GraphicsLayer", "esri/geometry/Point", "esri/symbols/SimpleMarkerSymbol", "esri/PopupTemplate", "esri/geometry/Polyline", "esri/symbols/SimpleLineSymbol", "esri/geometry/Polygon", "esri/symbols/SimpleFillSymbol", "esri/layers/FeatureLayer"], function(esriConfig, Map, MapView, BasemapGallery, Locate, Search, Graphic, GraphicsLayer, Point, SimpleMarkerSymbol, PopupTemplate, Polyline, Polygon, SimpleLineSymbol, SimpleFillSymbol, FeatureLayer){
+    require(["esri/config", "esri/Map", "esri/views/MapView", "esri/widgets/BasemapGallery", "esri/widgets/Locate", "esri/widgets/Search", "esri/Graphic", "esri/layers/GraphicsLayer", "esri/geometry/Point", "esri/symbols/SimpleMarkerSymbol", "esri/PopupTemplate", "esri/geometry/Polyline", "esri/symbols/SimpleLineSymbol", "esri/geometry/Polygon", "esri/symbols/SimpleFillSymbol", "esri/layers/FeatureLayer", "esri/renderers/SimpleRenderer", "esri/symbols/PictureMarkerSymbol"], function(esriConfig, Map, MapView, BasemapGallery, Locate, Search, Graphic, GraphicsLayer, Point, SimpleMarkerSymbol, PopupTemplate, Polyline, Polygon, SimpleLineSymbol, SimpleFillSymbol, FeatureLayer, SimpleRenderer, PictureMarkerSymbol){
 
       esriConfig.apiKey = "AAPTxy8BH1VEsoebNVZXo8HurKhkfX2pLTXcVWHRTuerXfKdl8xA3hB7zFxWPjRrs_PmSiHD6NMaIC5WLmBbO-NA1T2GQkQXEa7aLeqxmO48UBNlwetFemomKmm-ST0OzOE-kSn-6yb2lxnygkhJKeVk_StkyBWwjPguCGs8D_lgBidDtsIUFUo_LHpm7CSkXPjglMGjEim8xmk8TzW7-wN5Y_8QOpQ3rGbxcaq4hCiZtjzLu6JxuhL-mJjQuyHjbVLrAT1_0Sem5hOH"
       
@@ -142,8 +142,19 @@
       
       map.add(usaeduLayer);
 
+      const airportRenderer = {
+        "type": "simple",
+        "symbol": {
+          "type": "picture-marker",
+          "url": "https://github.com/bjrichardso3/agol1/blob/main/local_airport_24dp_5F6368.png",
+          "width": "18px",
+          "height": "18px"
+        }
+      }
+
       const us_airports = new FeatureLayer({
         url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/United_States_Airports/FeatureServer",
+        renderer: airportRenderer
       });
       
       map.add(us_airports);
