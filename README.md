@@ -1,2 +1,2 @@
 # esrijs
-Geog 576 Lab 2
+Geog 576 Lab 3
