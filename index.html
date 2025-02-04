@@ -154,7 +154,8 @@
 
       const us_airports = new FeatureLayer({
         url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/United_States_Airports/FeatureServer",
-        renderer: airportRenderer
+        renderer: airportRenderer,
+        definitionExpression: "Fac_Type = 'Airport'"
       });
       
       map.add(us_airports);
