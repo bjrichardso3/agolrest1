@@ -211,7 +211,7 @@
 
       const us_heliports = new FeatureLayer({
         url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/United_States_Airports/FeatureServer",
-        renderer: airportRenderer,
+        renderer: heliportRenderer,
         definitionExpression: "Fac_Type = 'HELIPORT'",
         labelingInfo: [heliportLabels]
       });
