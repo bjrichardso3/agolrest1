@@ -250,6 +250,8 @@
       const myAirports = new FeatureLayer({
         url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/My_Airports_United_States/FeatureServer",
         outFields:["AirportCode"],
+        renderer: myAirportRenderer,
+        labelingInfo: [myAirportLabels]
       })
 
       map.add(myAirports);
