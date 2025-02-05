@@ -30,7 +30,7 @@
       });
 
       view.ui.add(basemapGallery, {
-        position: "top-right"
+        position: "bottom-left"
       });
 
       const locateWidget = new Locate({
@@ -263,13 +263,13 @@
         layerInfos: [pointInfos]
       });
 
-      view.ui.add(editor, "bottom-left");
+      view.ui.add(editor, "bottom-right");
 
       const legend = new Legend({
         view: view
       });
 
-      view.ui.add(legend, "top-left");
+      view.ui.add(legend, "top-right");
 
     });
 
